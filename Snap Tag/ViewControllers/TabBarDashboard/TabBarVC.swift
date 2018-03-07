@@ -42,8 +42,8 @@ class TabBarVC: UITabBarController{
         tabThree.tabBarItem.title = "Storage"
         tabThree.tabBarItem.image = UIImage(named: "cloud")
         
-        
-        self.viewControllers = [tabOne, tabTwo, tabThree]
+        let controllers = [tabOne, tabTwo, tabThree]
+        self.viewControllers = controllers
     }
     
 }
