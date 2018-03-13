@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -21,6 +22,10 @@ class LocationDetailsVC: UITableViewController {
     
     var coordinate = CLLocationCoordinate2DMake(0, 0)
     var placemark: CLPlacemark?
+    var categoryName = "No Category"
+    var date = Date()
+    
+    var managedObjectContext: NSManagedObjectContext!
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -34,13 +39,47 @@ class LocationDetailsVC: UITableViewController {
         
         configureNavigationBar()
         configureLabels()
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PickCategory" {
+            let controller = segue.destination as! CategoryPickerVC
+            controller.selectedCategoryName = categoryName
+            controller.delegate = self
+        }
     }
     
     // MARK: - Actions
     @IBAction func done() {
+        let hudView = HUDView.hud(inView: navigationController!.view, animated: true)
+        hudView.text = "Tagged"
         
+        // Create Location Data Model Object
+        let location = Location(context: managedObjectContext)
+        
+        // Setting values to Data Model - to be saved in CoreData
+        location.locationDescription = descriptionTextView.text
+        location.category = categoryName
+        location.latitude = coordinate.latitude
+        location.longitude = coordinate.longitude
+        location.date = self.date
+        location.placemark = self.placemark
+        
+        // Save to the data store with error catching handler
+        do {
+            try managedObjectContext.save()
+            afterDelay(0.6) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        } catch {
+            fatalCoreDataError(error)
+        }
     }
-    
+
     @IBAction func cancel() {
         dismiss(animated: true, completion: nil)
     }
@@ -51,7 +90,7 @@ class LocationDetailsVC: UITableViewController {
     
     func configureLabels() {
         descriptionTextView.text = ""
-        categoryLabel.text = ""
+        categoryLabel.text = categoryName
         
         latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
         longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
@@ -62,7 +101,7 @@ class LocationDetailsVC: UITableViewController {
             addressLabel.text = "No Address Found"
         }
         
-        dateLabel.text = format(date: Date())
+        dateLabel.text = format(date: self.date)
     }
     
     func string(from placemark: CLPlacemark) -> String {
@@ -88,6 +127,19 @@ class LocationDetailsVC: UITableViewController {
     func format(date: Date) -> String {
         return dateFormatter.string(from: date)
     }
+    
+    @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer) {
+        // Set the location of the gesture
+        let point = gestureRecognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // If touch at the Description cell, nothing happen and return
+        if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
+            return
+        }
+        // if gesture occured at other places other than above, remove keyboard
+        descriptionTextView.resignFirstResponder()
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -110,8 +162,32 @@ extension LocationDetailsVC {
             return 44
         }
     }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            descriptionTextView.becomeFirstResponder()
+        }
+    }
 }
 
+// MARK: - CategoryPickerDelegate
+
+extension LocationDetailsVC: CategoryPickerVCDelegate {
+    func didFinishSelecting(_ category: String) {
+        categoryName = category
+        // MARK: - Check Below Implmentation of reloading just this one cell!
+        configureLabels()
+        navigationController?.popViewController(animated: true)
+    }
+}
 
 
 

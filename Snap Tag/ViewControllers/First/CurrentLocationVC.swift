@@ -8,18 +8,20 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class CurrentLocationVC: UIViewController {
     
     let locationManager = CLLocationManager()
     var location: CLLocation?
     var updatingLocation = false
-    
+
     let geoCoder = CLGeocoder()
     var placemark: CLPlacemark?
     var performReverseGeocoding = false
     var lastGeocodingError: Error?
     
+    var managedObjectContext: NSManagedObjectContext!
     
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
@@ -66,6 +68,7 @@ class CurrentLocationVC: UIViewController {
             let locationDetailsVC = navigationController.topViewController as! LocationDetailsVC
             locationDetailsVC.coordinate = self.location!.coordinate
             locationDetailsVC.placemark = self.placemark
+            locationDetailsVC.managedObjectContext = self.managedObjectContext
         } else {
             assertionFailure("Did not recognized storyboard identifier")
         }

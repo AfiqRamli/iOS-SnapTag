@@ -12,6 +12,7 @@ extension UIViewController {
     
     enum SegueHandlerType: String {
         case locationDetails
+        case PickCategory
     }
     
 }

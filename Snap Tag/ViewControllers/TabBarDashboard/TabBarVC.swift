@@ -10,7 +10,7 @@
 import UIKit
 
 class TabBarVC: UITabBarController{
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
@@ -34,7 +34,6 @@ class TabBarVC: UITabBarController{
         let tabTwo = SecondVC.instance()
         tabTwo.tabBarItem.title = "Work"
         tabTwo.tabBarItem.image = UIImage(named: "briefcase")
-        
         
         
         //Create Tab three
