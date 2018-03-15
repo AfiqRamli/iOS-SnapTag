@@ -19,27 +19,40 @@ private let dateFormatter: DateFormatter = {
 }()
 
 class LocationDetailsVC: UITableViewController {
-    
-    var coordinate = CLLocationCoordinate2DMake(0, 0)
-    var placemark: CLPlacemark?
+
     var categoryName = "No Category"
+    var coordinate = CLLocationCoordinate2DMake(0, 0)
     var date = Date()
-    
+    var descriptionText = ""
+    var locationToEdit: Location? {
+        didSet {
+            if let location = locationToEdit {
+                categoryName = location.category
+                coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+                date = location.date
+                descriptionText = location.locationDescription
+                placemark = location.placemark
+            }
+        }
+    }
     var managedObjectContext: NSManagedObjectContext!
+    var placemark: CLPlacemark?
     
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureNavigationBar()
+        if let location = locationToEdit {
+            self.title = "Edit Location"
+        }
         configureLabels()
-        
+
+    
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
@@ -56,17 +69,23 @@ class LocationDetailsVC: UITableViewController {
     // MARK: - Actions
     @IBAction func done() {
         let hudView = HUDView.hud(inView: navigationController!.view, animated: true)
-        hudView.text = "Tagged"
         
         // Create Location Data Model Object
-        let location = Location(context: managedObjectContext)
+        let location: Location
+        if let temp = locationToEdit {
+            hudView.text = "Updated"
+            location = temp
+        } else {
+            hudView.text = "Tagged"
+            location = Location(context: managedObjectContext)
+        }
         
         // Setting values to Data Model - to be saved in CoreData
-        location.locationDescription = descriptionTextView.text
         location.category = categoryName
+        location.date = self.date
         location.latitude = coordinate.latitude
         location.longitude = coordinate.longitude
-        location.date = self.date
+        location.locationDescription = descriptionTextView.text
         location.placemark = self.placemark
         
         // Save to the data store with error catching handler
@@ -85,11 +104,10 @@ class LocationDetailsVC: UITableViewController {
     }
     
     // MARK: - Private Methods
-    func configureNavigationBar() {
-    }
     
     func configureLabels() {
-        descriptionTextView.text = ""
+        
+        descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
         
         latitudeLabel.text = String(format: "%.8f", coordinate.latitude)

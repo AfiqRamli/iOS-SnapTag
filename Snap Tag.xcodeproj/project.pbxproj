@@ -10,15 +10,16 @@
 		CA252038204E367200AAE9C4 /* LocationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA252037204E367200AAE9C4 /* LocationDetailsVC.swift */; };
 		CA25203B204EE96100AAE9C4 /* UIViewController+Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA25203A204EE96100AAE9C4 /* UIViewController+Segue.swift */; };
 		CA25AF12204FED150085A1BD /* CategoryPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA25AF11204FED150085A1BD /* CategoryPickerVC.swift */; };
+		CA406DF9205918D500805D8D /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA406DF8205918D500805D8D /* LocationCell.swift */; };
 		CA550E232051183300E4B2A9 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA550E222051183300E4B2A9 /* HUDView.swift */; };
 		CA597B992056210F0058576C /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA597B972056210F0058576C /* Location+CoreDataClass.swift */; };
 		CA597B9A2056210F0058576C /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA597B982056210F0058576C /* Location+CoreDataProperties.swift */; };
 		CA76A1BB2049853A0049345A /* CurrentLocationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA76A1BA2049853A0049345A /* CurrentLocationVC.storyboard */; };
 		CAC0D8CD2049547100817761 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8CC2049547100817761 /* TabBarVC.swift */; };
-		CAC0D8D02049555A00817761 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8CF2049555A00817761 /* SecondVC.swift */; };
+		CAC0D8D02049555A00817761 /* LocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8CF2049555A00817761 /* LocationsVC.swift */; };
 		CAC0D8D22049556600817761 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8D12049556600817761 /* ThirdVC.swift */; };
 		CAC0D8D6204955A800817761 /* ThirdVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC0D8D5204955A800817761 /* ThirdVC.storyboard */; };
-		CAC0D8D8204955B200817761 /* SecondVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC0D8D7204955B200817761 /* SecondVC.storyboard */; };
+		CAC0D8D8204955B200817761 /* LocationsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC0D8D7204955B200817761 /* LocationsVC.storyboard */; };
 		CAD33EB1205246DE001583EE /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD33EB0205246DE001583EE /* Functions.swift */; };
 		CAE069B8204AECE700130523 /* CurrentLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE069B7204AECE700130523 /* CurrentLocationVC.swift */; };
 		CAE9CE98204909F50027880D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE9CE97204909F50027880D /* AppDelegate.swift */; };
@@ -34,15 +35,16 @@
 		CA252037204E367200AAE9C4 /* LocationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsVC.swift; sourceTree = "<group>"; };
 		CA25203A204EE96100AAE9C4 /* UIViewController+Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Segue.swift"; sourceTree = "<group>"; };
 		CA25AF11204FED150085A1BD /* CategoryPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerVC.swift; sourceTree = "<group>"; };
+		CA406DF8205918D500805D8D /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = "Snap Tag/ViewControllers/Locations Tab/LocationCell.swift"; sourceTree = SOURCE_ROOT; };
 		CA550E222051183300E4B2A9 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		CA597B972056210F0058576C /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA597B982056210F0058576C /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CA76A1BA2049853A0049345A /* CurrentLocationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentLocationVC.storyboard; sourceTree = "<group>"; };
 		CAC0D8CC2049547100817761 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
-		CAC0D8CF2049555A00817761 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		CAC0D8CF2049555A00817761 /* LocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVC.swift; sourceTree = "<group>"; };
 		CAC0D8D12049556600817761 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 		CAC0D8D5204955A800817761 /* ThirdVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThirdVC.storyboard; sourceTree = "<group>"; };
-		CAC0D8D7204955B200817761 /* SecondVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondVC.storyboard; sourceTree = "<group>"; };
+		CAC0D8D7204955B200817761 /* LocationsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationsVC.storyboard; sourceTree = "<group>"; };
 		CAD33EB0205246DE001583EE /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		CAE069B7204AECE700130523 /* CurrentLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationVC.swift; sourceTree = "<group>"; };
 		CAE9CE94204909F50027880D /* Snap Tag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snap Tag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +78,7 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		CA76A1BC204985400049345A /* First */ = {
+		CA76A1BC204985400049345A /* Current Location Tab */ = {
 			isa = PBXGroup;
 			children = (
 				CAE069B7204AECE700130523 /* CurrentLocationVC.swift */,
@@ -84,15 +86,15 @@
 				CA25AF11204FED150085A1BD /* CategoryPickerVC.swift */,
 				CA76A1BA2049853A0049345A /* CurrentLocationVC.storyboard */,
 			);
-			path = First;
+			path = "Current Location Tab";
 			sourceTree = "<group>";
 		};
 		CA76A1BD204985590049345A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				CAC0D8DB20497A0000817761 /* TabBarDashboard */,
-				CA76A1BC204985400049345A /* First */,
-				CAC0D8D32049556D00817761 /* Second */,
+				CA76A1BC204985400049345A /* Current Location Tab */,
+				CAC0D8D32049556D00817761 /* Locations Tab */,
 				CAC0D8D42049558200817761 /* Third */,
 			);
 			path = ViewControllers;
@@ -107,13 +109,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		CAC0D8D32049556D00817761 /* Second */ = {
+		CAC0D8D32049556D00817761 /* Locations Tab */ = {
 			isa = PBXGroup;
 			children = (
-				CAC0D8CF2049555A00817761 /* SecondVC.swift */,
-				CAC0D8D7204955B200817761 /* SecondVC.storyboard */,
+				CAC0D8CF2049555A00817761 /* LocationsVC.swift */,
+				CA406DF8205918D500805D8D /* LocationCell.swift */,
+				CAC0D8D7204955B200817761 /* LocationsVC.storyboard */,
 			);
-			path = Second;
+			path = "Locations Tab";
 			sourceTree = "<group>";
 		};
 		CAC0D8D42049558200817761 /* Third */ = {
@@ -136,8 +139,6 @@
 		CAE9CE8B204909F50027880D = {
 			isa = PBXGroup;
 			children = (
-				CA597B972056210F0058576C /* Location+CoreDataClass.swift */,
-				CA597B982056210F0058576C /* Location+CoreDataProperties.swift */,
 				CAE9CE96204909F50027880D /* Snap Tag */,
 				CAE9CE95204909F50027880D /* Products */,
 			);
@@ -156,13 +157,14 @@
 			children = (
 				CAE9CE97204909F50027880D /* AppDelegate.swift */,
 				CA76A1BD204985590049345A /* ViewControllers */,
-				CA550E242051184600E4B2A9 /* Utilities */,
+				CAFA0C34205A155A00987D9C /* DataModel */,
 				CAC0D8CE204954ED00817761 /* Main */,
 				CAE9CEA1204909F50027880D /* Assets.xcassets */,
 				CAE9CEA3204909F50027880D /* LaunchScreen.storyboard */,
 				CAE9CEA6204909F50027880D /* Info.plist */,
 				CAE9CE9E204909F50027880D /* Snap_Tag.xcdatamodeld */,
 				CAE9CEAE20490B2C0027880D /* Extensions */,
+				CA550E242051184600E4B2A9 /* Utilities */,
 			);
 			path = "Snap Tag";
 			sourceTree = "<group>";
@@ -174,6 +176,15 @@
 				CA25203A204EE96100AAE9C4 /* UIViewController+Segue.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CAFA0C34205A155A00987D9C /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA597B972056210F0058576C /* Location+CoreDataClass.swift */,
+				CA597B982056210F0058576C /* Location+CoreDataProperties.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE9CEA5204909F50027880D /* LaunchScreen.storyboard in Resources */,
-				CAC0D8D8204955B200817761 /* SecondVC.storyboard in Resources */,
+				CAC0D8D8204955B200817761 /* LocationsVC.storyboard in Resources */,
 				CAC0D8D6204955A800817761 /* ThirdVC.storyboard in Resources */,
 				CAE9CEA2204909F50027880D /* Assets.xcassets in Resources */,
 				CA76A1BB2049853A0049345A /* CurrentLocationVC.storyboard in Resources */,
@@ -257,12 +268,13 @@
 				CAE9CEA0204909F50027880D /* Snap_Tag.xcdatamodeld in Sources */,
 				CAE9CEAD20490B1C0027880D /* UIViewController+Instantiate.swift in Sources */,
 				CA25AF12204FED150085A1BD /* CategoryPickerVC.swift in Sources */,
+				CA406DF9205918D500805D8D /* LocationCell.swift in Sources */,
 				CAD33EB1205246DE001583EE /* Functions.swift in Sources */,
 				CAC0D8CD2049547100817761 /* TabBarVC.swift in Sources */,
 				CA252038204E367200AAE9C4 /* LocationDetailsVC.swift in Sources */,
 				CAC0D8D22049556600817761 /* ThirdVC.swift in Sources */,
 				CAE9CE9A204909F50027880D /* MainVC.swift in Sources */,
-				CAC0D8D02049555A00817761 /* SecondVC.swift in Sources */,
+				CAC0D8D02049555A00817761 /* LocationsVC.swift in Sources */,
 				CAE9CE98204909F50027880D /* AppDelegate.swift in Sources */,
 				CAE069B8204AECE700130523 /* CurrentLocationVC.swift in Sources */,
 				CA597B9A2056210F0058576C /* Location+CoreDataProperties.swift in Sources */,

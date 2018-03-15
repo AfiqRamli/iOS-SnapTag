@@ -343,7 +343,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tPv-eT-uPp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r8d-xL-Lek" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EditLocationID" automaticallyAdjustsScrollViewInsets="NO" id="r8d-xL-Lek" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sQU-Sb-aDB">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

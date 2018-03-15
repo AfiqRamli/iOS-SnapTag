@@ -27,12 +27,15 @@ class TabBarVC: UITabBarController{
     func configureTabBar() {
         // Create Tab One
         let tabOne = CurrentLocationVC.instance()
-        tabOne.tabBarItem.title = "Location"
+        tabOne.tabBarItem.title = "Tag"
         tabOne.tabBarItem.image = UIImage(named: "earth-usa")
         
         // Create Tab Two
-        let tabTwo = SecondVC.instance()
-        tabTwo.tabBarItem.title = "Work"
+        let storyboard = UIStoryboard(name: "LocationsVC", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LocationsID") as! LocationsVC
+        let tabTwo = UINavigationController(rootViewController: vc)
+        
+        tabTwo.tabBarItem.title = "Locations"
         tabTwo.tabBarItem.image = UIImage(named: "briefcase")
         
         
