@@ -17,8 +17,8 @@
 		CA76A1BB2049853A0049345A /* CurrentLocationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA76A1BA2049853A0049345A /* CurrentLocationVC.storyboard */; };
 		CAC0D8CD2049547100817761 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8CC2049547100817761 /* TabBarVC.swift */; };
 		CAC0D8D02049555A00817761 /* LocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8CF2049555A00817761 /* LocationsVC.swift */; };
-		CAC0D8D22049556600817761 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8D12049556600817761 /* ThirdVC.swift */; };
-		CAC0D8D6204955A800817761 /* ThirdVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC0D8D5204955A800817761 /* ThirdVC.storyboard */; };
+		CAC0D8D22049556600817761 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0D8D12049556600817761 /* MapVC.swift */; };
+		CAC0D8D6204955A800817761 /* MapVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC0D8D5204955A800817761 /* MapVC.storyboard */; };
 		CAC0D8D8204955B200817761 /* LocationsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC0D8D7204955B200817761 /* LocationsVC.storyboard */; };
 		CAD33EB1205246DE001583EE /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD33EB0205246DE001583EE /* Functions.swift */; };
 		CAE069B8204AECE700130523 /* CurrentLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE069B7204AECE700130523 /* CurrentLocationVC.swift */; };
@@ -29,6 +29,7 @@
 		CAE9CEA2204909F50027880D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE9CEA1204909F50027880D /* Assets.xcassets */; };
 		CAE9CEA5204909F50027880D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE9CEA3204909F50027880D /* LaunchScreen.storyboard */; };
 		CAE9CEAD20490B1C0027880D /* UIViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE9CEAC20490B1C0027880D /* UIViewController+Instantiate.swift */; };
+		CAFA0C37205A523F00987D9C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFA0C36205A523F00987D9C /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +43,8 @@
 		CA76A1BA2049853A0049345A /* CurrentLocationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentLocationVC.storyboard; sourceTree = "<group>"; };
 		CAC0D8CC2049547100817761 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		CAC0D8CF2049555A00817761 /* LocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVC.swift; sourceTree = "<group>"; };
-		CAC0D8D12049556600817761 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
-		CAC0D8D5204955A800817761 /* ThirdVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThirdVC.storyboard; sourceTree = "<group>"; };
+		CAC0D8D12049556600817761 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		CAC0D8D5204955A800817761 /* MapVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapVC.storyboard; sourceTree = "<group>"; };
 		CAC0D8D7204955B200817761 /* LocationsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationsVC.storyboard; sourceTree = "<group>"; };
 		CAD33EB0205246DE001583EE /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		CAE069B7204AECE700130523 /* CurrentLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationVC.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		CAE9CEA4204909F50027880D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAE9CEA6204909F50027880D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAE9CEAC20490B1C0027880D /* UIViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiate.swift"; sourceTree = "<group>"; };
+		CAFA0C36205A523F00987D9C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFA0C37205A523F00987D9C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +98,7 @@
 				CAC0D8DB20497A0000817761 /* TabBarDashboard */,
 				CA76A1BC204985400049345A /* Current Location Tab */,
 				CAC0D8D32049556D00817761 /* Locations Tab */,
-				CAC0D8D42049558200817761 /* Third */,
+				CAC0D8D42049558200817761 /* Map Tab */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -119,13 +122,13 @@
 			path = "Locations Tab";
 			sourceTree = "<group>";
 		};
-		CAC0D8D42049558200817761 /* Third */ = {
+		CAC0D8D42049558200817761 /* Map Tab */ = {
 			isa = PBXGroup;
 			children = (
-				CAC0D8D12049556600817761 /* ThirdVC.swift */,
-				CAC0D8D5204955A800817761 /* ThirdVC.storyboard */,
+				CAC0D8D12049556600817761 /* MapVC.swift */,
+				CAC0D8D5204955A800817761 /* MapVC.storyboard */,
 			);
-			path = Third;
+			path = "Map Tab";
 			sourceTree = "<group>";
 		};
 		CAC0D8DB20497A0000817761 /* TabBarDashboard */ = {
@@ -141,6 +144,7 @@
 			children = (
 				CAE9CE96204909F50027880D /* Snap Tag */,
 				CAE9CE95204909F50027880D /* Products */,
+				CAFA0C35205A523F00987D9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +191,14 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		CAFA0C35205A523F00987D9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAFA0C36205A523F00987D9C /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,6 +232,11 @@
 					CAE9CE93204909F50027880D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -248,7 +265,7 @@
 			files = (
 				CAE9CEA5204909F50027880D /* LaunchScreen.storyboard in Resources */,
 				CAC0D8D8204955B200817761 /* LocationsVC.storyboard in Resources */,
-				CAC0D8D6204955A800817761 /* ThirdVC.storyboard in Resources */,
+				CAC0D8D6204955A800817761 /* MapVC.storyboard in Resources */,
 				CAE9CEA2204909F50027880D /* Assets.xcassets in Resources */,
 				CA76A1BB2049853A0049345A /* CurrentLocationVC.storyboard in Resources */,
 				CAE9CE9D204909F50027880D /* Main.storyboard in Resources */,
@@ -272,7 +289,7 @@
 				CAD33EB1205246DE001583EE /* Functions.swift in Sources */,
 				CAC0D8CD2049547100817761 /* TabBarVC.swift in Sources */,
 				CA252038204E367200AAE9C4 /* LocationDetailsVC.swift in Sources */,
-				CAC0D8D22049556600817761 /* ThirdVC.swift in Sources */,
+				CAC0D8D22049556600817761 /* MapVC.swift in Sources */,
 				CAE9CE9A204909F50027880D /* MainVC.swift in Sources */,
 				CAC0D8D02049555A00817761 /* LocationsVC.swift in Sources */,
 				CAE9CE98204909F50027880D /* AppDelegate.swift in Sources */,
