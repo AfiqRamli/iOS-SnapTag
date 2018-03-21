@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--EditLocationID-->
+        <scene sceneID="f6U-CV-c2M">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CurrentLocationVC" referencedIdentifier="EditLocationID" id="wKY-lg-aai" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91c-gv-nBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="150"/>
+        </scene>
         <!--Map-->
         <scene sceneID="S5g-d7-zDc">
             <objects>
@@ -43,6 +51,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="NBU-Iw-ssx" id="81c-I7-B3G"/>
+                        <segue destination="wKY-lg-aai" kind="presentation" identifier="EditLocation" id="Ijm-MO-1GQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kg7-eK-UCM" userLabel="First Responder" sceneMemberID="firstResponder"/>

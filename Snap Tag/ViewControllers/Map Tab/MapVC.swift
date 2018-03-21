@@ -13,7 +13,15 @@ import CoreData
 class MapVC: UIViewController {
     
     var locations = [Location]()
-    var managedObjectContext: NSManagedObjectContext!
+    var managedObjectContext: NSManagedObjectContext! {
+        didSet {
+            NotificationCenter.default.addObserver(forName: Notification.Name.NSManagedObjectContextObjectsDidChange, object: managedObjectContext, queue: OperationQueue.main) { _ in
+                if self.isViewLoaded {
+                    self.updateLocations()
+                }
+            }
+        }
+    }
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -27,6 +35,16 @@ class MapVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "EditLocation" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsVC
+            controller.managedObjectContext = self.managedObjectContext
+            
+            let button = sender as! UIButton
+            let location = locations[button.tag]
+            controller.locationToEdit = location
+        }
         
     }
     
@@ -92,8 +110,7 @@ class MapVC: UIViewController {
     }
     
     @objc func showLocationDetails(_ sender: UIButton) {
-        
-        
+        performSegue(withIdentifier: "EditLocation", sender: sender)
     }
 }
 
@@ -142,10 +159,14 @@ extension MapVC: MKMapViewDelegate {
         }
         
         return annotationView
-    }
-    
+    } 
 }
 
+extension MapVC: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
+}
 
 
 
